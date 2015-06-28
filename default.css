@@ -137,3 +137,8 @@ footer a img {
   display: inline-block;
   max-width: 80%;
 }
+/*Blog Entry*/
+.blog_post img {
+  max-width: 12em;
+  max-height: 12em;
+}
