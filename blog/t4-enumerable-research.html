@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <title>Enumerable Discovery</title>
+  <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="../default.css">
+</head>
+
+<body>
+    <nav class="clearfix debug">
+      <a href="../index.html"><img class="fl-l logo" src="../img/logo.png" alt="Logo"></a>
+      <ul class="fl-r clearfix">
+        <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
+        <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
+        <li class="fl-l"><a href="index.html">Link to Blog</a></li>
+      </ul>
+    </nav>
+    <main class="blog_post">
+      <h2>Enumerable Discovery - grep</h2>
+      <h4>July 7th, 2015</h4>
+      <img src="../img/t4.jpg" alt="Discovery Image">
+      <p> Of the many popular Enumerable methods, the ones that come to mind are "map" and "select." Though these are the most popular, they are not necessarily the most powerful. In this post, I will discover the intricacies of "grep" and unveil the possibilites of this method.</p>
+      <p> Below is the basic format from the <a href="http://ruby-doc.org/core-2.2.2/Enumerable.html#method-i-grep">ruby docs</a>.</p>
+      <code>enum.grep(pattern) { |obj| block} => array</code>
+        <br>
+      <p>The above returns an array of every element in enum for which the pattern === element. If the optional block is applied, each matching element is passed through it, and the block's result is stored in the output array.</p>
+      <p>Grep can act as a simpler select by filtering by pattern matching rather than giving a block to "select." To do this case with "select", RegExp would be needed. Instead, you can simply choose a pattern with grep:</p>
+        <pre><code>
+          [1,10,100,1000].grep(1..100) # => [1, 10, 100]
+          [1,'a',2,'b'].grep(Integer) # => [1,2]
+        </code></pre>
+      <p>This filtering is easy to customize. You can even use "==" to throw a single condition as a filter.</p>
+      <p>The power of the "map" method is bulk transforming and grep can does this too.</p>
+        <pre><code>
+        [1,2,3,4].grep(1..10){|x| x + 1}
+      </code></pre>
+      <p>This will add 1 to each of the integers. As you may have noticed, this also does the select functionality and limits the array to a range of 1..10. Two birds with one stone! This style of coding can be called "selective bulk transformation." Very useful!</p>
+      <p>I will briefly say that grep can be utilized even more with RegExp, but that's for another post. Hope this help you implement grep as a more formidable tool.</p>
+
+    </main>
+    <footer class="debug">
+      <a href="https://www.facebook.com/mliew"><img src="http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png" alt="Facebook"></a>
+      <a href="https://twitter.com/mliew21396"><img src="https://cdn1.iconfinder.com/data/icons/metro-ui-icon-set/512/Twitter_alt_4.png" alt="Twitter"></a>
+      <a href="https://github.com/mliew21396"><img src="http://numaer.github.io/images/github.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="http://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png" alt="LinkedIn"></a>
+    </footer>
+  </body>
