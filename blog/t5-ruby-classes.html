@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+  <title>Shredding with Class Objects</title>
+  <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" type="text/css" href="../css/blog_post.css">
+</head>
+
+<body>
+    <nav class="clearfix debug">
+      <a href="../index.html"><img class="fl-l logo" src="../img/logo.png" alt="Logo"></a>
+      <ul class="fl-r clearfix">
+        <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
+        <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
+        <li class="fl-l"><a href="index.html">Link to Blog</a></li>
+      </ul>
+    </nav>
+    <main class="blog_post">
+      <h2>Shredding with Class Objects</h2>
+      <h4>July 15th, 2015</h4>
+      <img src="../img/t5.jpg" alt="Img of Post">
+      <p>Ruby Classes and Objects can be a tricky topic. To better understand how this hierarchy works, I'll use a snowboarding example.</p>
+      <p>Let's define a Class called Shaun White. A class is specified by the keyword 'class' and terminates with the keyword 'end':</p>
+      <pre><code>
+  class Shaun_White
+  end
+      </code></pre>
+      <p>Now onto the fancy stuff. Classes can take different types of variables and methods. Variables can be thought of as a property of an object while methods can be seen as an action an object can take.</p>
+      <pre><code>
+  class Shaun_White
+    accidents = 0
+    def take_gnarly_jump
+      athlete_name = "Shaun White"
+      crazy_feature = "pipe"
+      p "#{athlete_name} hits #{crazy_feature}!"
+    end
+  end
+      </code></pre>
+      <p>In the code above, we designated variable called athlete_type to help describe this class of Shaun White and also created a method called take_gnarly_jump. The method take_gnarly_jump contains two local variables athlete_name and crazy_feature, which are used in what is printed to the console. A local variable is not availabe outside this method aka it can only be used inside take_gnarly_feature. Here's a summary that defines the different types of variables.</p>
+      <table>
+        <tr>
+          <th>Variable Type</td>
+          <th>Description</td>
+        </tr>
+        <tr>
+          <td>Local Variables</td>
+          <td>Local variables are the variables that are defined in a method. Local variables are not available outside the method. You will see more details about method in subsequent chapter. Local variables begin with a lowercase letter or _.</td>
+        </tr>
+        <tr>
+          <td>Instance Variables</td>
+          <td>Instance variables are available across methods for any particular instance or object. That means that instance variables change from object to object. Instance variables are preceded by the at sign (@) followed by the variable name.</td>
+        </tr>
+        <tr>
+          <td>Class Variables</td>
+          <td>Class variables are available across different objects. A class variable belongs to the class and is a characteristic of a class. They are preceded by the sign @@ and are followed by the variable name.</td>
+        </tr>
+        <tr>
+          <td>Global Variables</td>
+          <td>Class variables are not available across classes. If you want to have a single variable, which is available across classes, you need to define a global variable. The global variables are always preceded by the dollar sign ($).</td>
+        </tr>
+      </table>
+      <p>Let's create another method called crashes_out.</p>
+      <pre><code>
+  class Shaun_White
+    accidents = 0
+    def take_gnarly_jump
+      athlete_name = "Shaun White"
+      crazy_feature = "pipe"
+      p "#{athlete_name} hits #{crazy_feature}!"
+    end
+    def crashes_out
+      athlete_name = "Shaun_White"
+      crazy_feature = "rail"
+      p "#{athlete_name} hits #{crazy_feature}!"
+    end
+  end
+      </code></pre>
+      <p>Now that we have two methods we're breaking the DRY principle by repeating the athlete_name variable twice in each method. That solution here is to define an instance variable called @athlete_name and pull that out of the methods and directly under the class. IMPORTANT: when creating instance variables, they must be inside an initialize method. The initialize method is run immediately when a class is called, always. The initialize method also take its instance variable as a parameter.</p>
+      <pre><code>
+  class Shaun_White
+    accidents = 0
+    def initialize(name)
+      @athlete_name = "Shaun White"
+    end
+    def take_gnarly_jump
+      crazy_feature = "pipe"
+      p "#{athlete_name} hits #{crazy_feature}!"
+    end
+    def crashes_out
+      crazy_feature = "rail"
+      p "#{athlete_name} hits #{crazy_feature}!"
+    end
+  end
+      </code></pre>
+      <p>The level above instance variables are class variables. They are shared among descendants of the class in which the class variables are defined. See the example below with the accidents variable:</p>
+      <pre><code>
+  class Shaun_White
+    @@accidents = 0
+    def initialize(name)
+      @athlete_name = "Shaun White"
+    end
+    def take_gnarly_jump
+      crazy_feature = "pipe"
+      p "#{athlete_name} hits #{crazy_feature}!"
+    end
+    def crashes_out
+      crazy_feature = "rail"
+      p "#{athlete_name} hits #{crazy_feature}!"
+    end
+    def total_accidents
+      @@accidents += 1
+      puts "Total number of accidents: #@@accidents"
+    end
+  end
+
+#Create Objects
+Jamie_Anderson=Shaun_White.new("Jamie_Anderson")
+
+#Call Methods
+Jamie_Anderson.total_accidents()
+Jamie_Anderson.total_accidents()
+      </code></pre>
+      <p>Here @@accidents is a class variable and will produce the following results:</p>
+      <pre><code>
+Total number of accidents: 1
+Total number of accidents: 2
+      </code></pre>
+      <p>The final variable is a global variable. These assignments are on the global status.</p>
+      <pre><code>
+  $athlete_type = "snowboarder"
+  class Shaun_White
+    def what_athlete
+      puts "Global variable athlete_type is #$athlete_type"
+    end
+  end
+  class Jamie_Anderson
+    def what_athlete
+      puts "Global variable athlete_type is #$athlete_type"
+    end
+  end
+
+  Shaun_Whiteobj = Shaun_White.new
+  Shaun_Whiteobj.what_athlete
+  Jamie_Andersonobj = Jamie_Anderson.new
+  Jamie_Andersonobj.what_athlete
+      </code></pre>
+      <p>Here $global_variable will produce the following result:</p>
+      <pre><code>
+  Global variable athlete_type is snowboarder
+  Global variable athlete_type is snowboarder
+      </code></pre>
+      <p>Hopefully this post has been as helpful to you as it was for me writing it. If there is something I something I can add to this entry, contact me through one of the links below. And until next time, chao!</p>
+    </main>
+    <footer class="debug">
+      <a href="https://www.facebook.com/mliew"><img src="http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png" alt="Facebook"></a>
+      <a href="https://twitter.com/mliew21396"><img src="https://cdn1.iconfinder.com/data/icons/metro-ui-icon-set/512/Twitter_alt_4.png" alt="Twitter"></a>
+      <a href="https://github.com/mliew21396"><img src="http://numaer.github.io/images/github.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="http://icons.iconarchive.com/icons/danleech/simple/1024/linkedin-icon.png" alt="LinkedIn"></a>
+    </footer>
+  </body>
