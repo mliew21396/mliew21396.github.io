@@ -1,0 +1,22 @@
+/*Main Content ---------------------*/
+/*All Images*/
+.homepage > section img {
+  max-width: 12em;
+  max-height: 12em ;
+  margin: 1em 0em;
+}
+/*About Me*/
+main h2 {
+  text-align: center;
+}
+/*Projects*/
+main section h3 {
+  text-align: center;
+}
+/*Project Images*/
+main section div a img{
+  display: block;
+  max-width:100%;
+  max-height: 100%;
+  margin: 0.5em;
+}
