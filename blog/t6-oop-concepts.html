@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+  <title>Classes vs Modules - What's the Difference?</title>
+  <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" type="text/css" href="../css/blog_post.css">
+</head>
+
+<body>
+    <nav class="clearfix debug">
+      <a href="../index.html"><img class="fl-l logo" src="../img/logo.png" alt="Logo"></a>
+      <ul class="fl-r clearfix">
+        <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
+        <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
+        <li class="fl-l"><a href="index.html">Link to Blog</a></li>
+        <li class="fl-l"><a href="../QA Resume '15.pdf">Resume</a></li>
+      </ul>
+    </nav>
+    <main class="blog_post">
+      <h2>Classes vs Modules - What's the Difference?</h2>
+      <h4>July 26th, 2015</h4>
+      <img src="../img/t6.jpg" alt="Img of Post">
+      <p>Classes vs Modules is an Object-Oriented question I've had for a while. The last few weeks have involved heavy class uses, but there's always this mystery called module that pops up every once in a while. To better understand the difference, I found this guide below: </p>
+      <table>
+        <tr>
+          <th></th>
+          <th>Class</th>
+          <th>Module</th>
+        </tr>
+        <tr>
+          <td>instantiation</td>
+          <td>can be instantiated</td>
+          <td>can *not* be instantiated</td>
+        </tr>
+        <tr>
+          <td>usage</td>
+          <td>object creation</td>
+          <td>mixin facility. provide a namespace.</td>
+        </tr>
+        <tr>
+          <td>superclass</td>
+          <td>module</td>
+          <td>object</td>
+        </tr>
+        <tr>
+          <td>consists of</td>
+          <td>methods, constants, and variables</td>
+          <td>methods, constants, and classes</td>
+        </tr>
+        <tr>
+          <td>methods</td>
+          <td>class methods, instance methods</td>
+          <td>module methods, instance methods</td>
+        </tr>
+        <tr>
+          <td>inheritance</td>
+          <td>inherits behavior and can be base for inheritance</td>
+          <td>no inheritance</td>
+        </tr>
+        <tr>
+          <td>inclusion</td>
+          <td>cannot be included</td>
+          <td>can be included in classes and modules by using the include command (includes all instance methods as instance methods in class/module)</td>
+        </tr>
+        <tr>
+          <td>extension</td>
+          <td>can not exten with extend command (only with inheritance)</td>
+          <td>module can extend instance by using extend command (extends given instance with singleton methods from module)</td>
+        </tr>
+      </table>
+      <p>The above can be thick to understand but the general gist is modules are usually parents of classes. Modules provide methods that can be used across multiple classes - similar to "libraries". Classes are about objects while modules are about functions.</p>
+      <p>An example is an authentication/authorization system. These systems work across multiple app-level classes (users are authenticated, sessions manage authentication, lots of other classes will act differently based on the auth state), so they need to share modules that act as APIs while the individual functionalities are the classes.</p>
+    </main>
+    <footer class="debug">
+      <a href="https://www.facebook.com/mliew"><img src="../img/fb.png" alt="Facebook"></a>
+      <a href="https://twitter.com/mliew21396"><img src="../img/twitter.png" alt="Twitter"></a>
+      <a href="https://github.com/mliew21396"><img src="../img/github.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="../img/linkedin.png" alt="LinkedIn"></a>
+    </footer>
+  </body>
