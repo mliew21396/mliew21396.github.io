@@ -1,10 +1,18 @@
-/*Main Content---------------------*/
+/*===============Main Content============*/
 main h2 {
   text-align: center;
 }
-main section div a img{
-  display: block;
-  max-width:100%;
+main section h2 a, main section p a {
+  text-decoration: none;
+  color: black;
+}
+main img {
+  width: 8em;
   max-height: 100%;
-  margin: 0.5em;
+  display: inline-block;
+}
+main p {
+  margin: 0.5em 0 0 1em;
+  display: inline-block;
+  max-width: 80%;
 }
