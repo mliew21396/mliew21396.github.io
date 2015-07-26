@@ -55,7 +55,7 @@ ul li a {
   text-decoration: none;
   color: #F2F2F4;
 }
-/*Banner*/
+/*===============Banner=================*/
 header {
   display: block;
   height: 20em;
@@ -88,7 +88,7 @@ header h3{
   text-align:center;
   margin: 6em 0;
 }
-/*Main Content*/
+/*============Main Content==============*/
 main {
   display: block;
   padding: 1em 0;
@@ -106,7 +106,7 @@ pre {
   background: #ece9d8;
   padding: 8px;
 }
-/*Footer*/
+/*=================Footer===============*/
 footer {
   padding: 2em 0;
 }
@@ -116,24 +116,4 @@ footer a {
 footer a img {
   width: 2em;
   height: 2em;
-}
-/*Blog Post Page*/
-.blog_list section h2 a, main section p a {
-  text-decoration: none;
-  color: black;
-}
-.blog_list img {
-  width: 8em;
-  max-height: 100%;
-  display: inline-block;
-}
-.blog_list p {
-  margin: 0.5em 0 0 1em;
-  display: inline-block;
-  max-width: 80%;
-}
-/*Blog Entry*/
-.blog_post img {
-  max-width: 12em;
-  max-height: 12em;
 }
