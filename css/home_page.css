@@ -13,6 +13,9 @@ main h2 {
 main section h3 {
   text-align: center;
 }
+.projects {
+  text-decoration: none;
+}
 /*Project Images*/
 main section div a img{
   display: block;
