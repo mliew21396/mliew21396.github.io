@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+  <title>Ruby Hashes vs. JavaScript Objects</title>
+  <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" type="text/css" href="../css/blog_post.css">
+</head>
+
+<body>
+    <nav class="clearfix debug">
+      <a href="../index.html"><img class="fl-l logo" src="../img/logo.png" alt="Logo"></a>
+      <ul class="fl-r clearfix">
+        <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
+        <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
+        <li class="fl-l"><a href="index.html">Link to Blog</a></li>
+        <li class="fl-l"><a href="../QA Resume '15.pdf">Resume</a></li>
+      </ul>
+    </nav>
+    <main class="blog_post">
+      <h2>Ruby Hashes vs. JavaScript Objects</h2>
+      <h4>August 2nd, 2015</h4>
+      <img src="../img/t7.jpg" alt="Img of Post">
+      <p>When learning Javascript, there are quite a few differences and similarities I noticed. The key to learning javascript, and in reality ruby as well, is distinguishing the differences between the two. Of these, I want to briefly cover Ruby hashes and JavaScript hashes.</p>
+      <p>Syntactically, javascript objects look a lot like ruby hashes as can be seen by the code snippets below.</p>
+      <pre><code>
+    hash = {name: "Mat" } #ruby hash
+    puts hash[:name] #prints "Mat"
+      </code></pre>
+      <pre><code>
+    var obj = {name: "Mat" } //js object
+    console.log(obj["name"]) //prints "Mat"
+      </code></pre>
+      <p>Both act as dictionaries where a property is referencing values that can be accessed directly on the object. Pretty cool huh.</p>
+      <p>To summarize what I've discovered between Ruby and JavaScript, JS does not restrict access to properties. The scope of JS is a lot rigorous than ruby. It's very easy to have bleeding scope since if you think about it, everything in JS is within functions which means everything outside these functions is a global variable. On the other hand, Ruby can be seen as too strict with encapsulating too much. How to tell the difference? Only time will tell. But one thing I do know is this will take me while to get use to the differences. I'll just need to keep chugging along in the meantime.</p>
+    </main>
+    <footer class="debug">
+      <a href="https://www.facebook.com/mliew"><img src="../img/fb.png" alt="Facebook"></a>
+      <a href="https://twitter.com/mliew21396"><img src="../img/twitter.png" alt="Twitter"></a>
+      <a href="https://github.com/mliew21396"><img src="../img/github.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="../img/linkedin.png" alt="LinkedIn"></a>
+    </footer>
+  </body>
