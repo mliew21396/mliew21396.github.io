@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+  <title>Ruby vs JavaScript</title>
+  <meta charset="UTF-8">
+  <link type="text/css" rel="stylesheet" href="../css/default.css">
+  <link rel="stylesheet" type="text/css" href="../css/blog_post.css">
+</head>
+
+<body>
+  <nav class="clearfix debug">
+    <a href="../index.html"><img class="fl-l logo" src="../img/logo.png" alt="Logo"></a>
+    <ul class="fl-r clearfix">
+      <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
+      <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
+      <li class="fl-l"><a href="index.html">Link to Blog</a></li>
+      <li class="fl-l"><a href="../QA Resume '15.pdf">Resume</a></li>
+    </ul>
+  </nav>
+  <main class="blog_post">
+    <h2>Ruby vs JavaScript</h2>
+    <h4>August 5th, 2015</h4>
+    <p>
+    <p>Here's a quick cheatsheet on comparing Ruby vs JavaScript. Paulo and I worked together on this and listed the most common differences below. We also found a really <a href="http://agentcooper.io/js-ruby-comparison/">Amazing Resource</a> that goes more indepth on this topic. Check it out!</p>
+    <h2 class="left_header">Ruby</h2>
+    <h2 class="right_header">JavaScript</h2>
+    <p>Method/Function Definitions</p>
+    <div class="left">
+        <pre><code>#Defines function
+def method_name (parameter1, parameter2)
+  puts parameter1
+end
+
+# Calls function
+method_name("cat", "dog") # => cat
+        </pre></code>
+    </div>
+    <div class="right">
+        <pre><code>//Defines function
+def methodName (parameter1, parameter2) {
+  console.log(parameter1);
+};
+
+// Calls function
+methodName("cat", "dog") // => cat
+        </pre></code>
+    </div>
+
+<p>Variable Declarations</p>
+    <div class="left">
+        <pre><code>#Declares Variable
+variable_name = "cat"
+        </pre></code>
+    </div>
+    <div class="right">
+        <pre><code>//Declares Variable
+var variableName = "cat";
+        </pre></code>
+    </div>
+
+    <p>Create Class/Object</p>
+    <div class="left">
+        <pre><code>#Ruby Class
+class Person
+  attr_accessor :firstName, :lastName
+
+  def initialize(firstName, lastName)
+    @firstName = firstName
+    @lastName = lastName
+  end
+
+  def fullName
+    @firstName + " " + @lastName
+  end
+end
+
+john = Person.new("John", "Malkovic")
+john.fullName # "John Malkovic"
+        </pre></code>
+    </div>
+    <div class="right">
+        <pre><code>//JavaScript Class
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+
+
+
+Person.prototype.fullName = function() {
+  return this.firstName + " " + this.lastName;
+}
+
+
+var john = new Person("John", "Malkovic");
+john.fullName(); // "John Malkovic"
+        </pre></code>
+    </div>
+
+    <p>Hashes and Objects</p>
+    <div class="left">
+        <pre><code>#Declares Variable
+h = {}
+h['a'] = 1
+h['b'] = 2
+
+h.each {|key, value| puts "#{key} #{value}" }
+
+h.keys # ['a', 'b']
+h.has_key?('c') # false
+
+h.length # 2
+
+h.delete("b")
+        </pre></code>
+    </div>
+    <div class="right">
+        <pre><code>//Declares Variable
+var h = {};
+h['a'] = 1;
+h['b'] = 2;
+
+for (key in h) { console.log(key, h[key]); }
+
+Object.keys(h); // ['a', 'b']
+h.hasOwnProperty('c') // false
+
+Object.keys(h).length // 2
+
+delete h.b
+        </pre></code>
+    </div>
+    <div style="clear: both;"></div>
+    </main>
+    <footer class="debug">
+      <a href="https://www.facebook.com/mliew"><img src="../img/fb.png" alt="Facebook"></a>
+      <a href="https://twitter.com/mliew21396"><img src="../img/twitter.png" alt="Twitter"></a>
+      <a href="https://github.com/mliew21396"><img src="../img/github.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="../img/linkedin.png" alt="LinkedIn"></a>
+    </footer>
+  </body>
+</html>

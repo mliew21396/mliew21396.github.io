@@ -7,3 +7,30 @@
 td {
   padding: 1em;
 }
+.table td {
+  border: 1px solid black;
+  border-spacing: 0;
+}
+/*Cheat-Sheet*/
+.left_header {
+  width: 49%;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+.right_header {
+  width: 49%;
+  position: relative;
+  float: right;
+  text-align: center;
+}
+.left {
+  width: 49%;
+  position: relative;
+  float: left;
+}
+.right {
+  width: 49%;
+  position: relative;
+  float: right;
+}
