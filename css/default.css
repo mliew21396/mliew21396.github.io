@@ -36,7 +36,7 @@ html {
 }
 /*=================NAV==================*/
 nav {
-  background-color: #616162;
+  background-color: #A8A8A8;
 }
 .logo {
   width: 2.5em;
@@ -46,14 +46,40 @@ nav {
 ul {
   margin: 0;
   padding: 0;
+  background-color: #A8A8A8;
 }
 ul li {
-  margin: 1.4em;
+  /*margin: 1.4em 0.5em ;*/
+  padding: 1.4em 0.5em;
   list-style-type: none;
 }
 ul li a {
+  padding: 10px;
   text-decoration: none;
   color: #F2F2F4;
+}
+ul li a:hover {
+  background:#8A8A8A ;color:#FFF ;border-radius: 5px;
+}
+/*Figure out sliding menu later*/
+/*.menu {
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+}*/
+.menu-icon {
+  float: right;
+  font-size: 17px;
+  padding: 13px 20px;
+  background: #A8A8A8;
+  color: #8A8A8A;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px 5px 0 0;
+  display: none;
+  border-style: none;
 }
 /*===============Banner=================*/
 header {
@@ -116,4 +142,32 @@ footer a {
 footer a img {
   width: 2em;
   height: 2em;
+}
+
+@media screen and (max-width: 640px) {
+  .menu {
+    width: 98%;
+  }
+  .menu {
+    display: none;
+  }
+  .menu li {
+    width: 98%;
+    padding: 1.4em 0;
+    text-align: center;
+    border-top: 1px solid grey;
+
+  }
+  .menu-icon {
+    display: block;
+  }
+  /*Vertical Aligning Main section*/
+  .col-2 {
+    width: 99%;
+  }
+}
+@media screen and (max-width: 320px) {
+  body {
+    width: 320px;
+  }
 }

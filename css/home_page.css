@@ -23,3 +23,8 @@ main section div a img{
   max-height: 100%;
   margin: 0.5em;
 }
+/*@media screen and (max-width: 640px) {
+  .col-2 {
+    width: 99%;
+  }
+}*/

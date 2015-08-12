@@ -4,159 +4,161 @@
   <meta charset="UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/default.css">
   <link rel="stylesheet" type="text/css" href="../css/blog_post.css">
+  <script type="text/javascript" src="../js/default.js"></script>
 </head>
 
 <body>
-    <nav class="clearfix debug">
-      <a href="../index.html"><img class="fl-l logo" src="../img/logo.png" alt="Logo"></a>
-      <ul class="fl-r clearfix">
-        <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
-        <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
-        <li class="fl-l"><a href="index.html">Link to Blog</a></li>
-        <li class="fl-l"><a href="../QA Resume '15.pdf">Resume</a></li>
-      </ul>
-    </nav>
-    <main class="blog_post">
-      <h2>Exploring Regular Expressions</h2>
-      <h4>August 6th, 2015</h4>
-      <img src="../img/t8.jpg" alt="Img of Post">
-      <p>
-        Regular Expressions, aka Regex, can be a very powerful tool in web development ranging from aiding validations to creating better search/select algorithms. Specifically, it can be used to narrow down a plethora of conditionals to a mere line or so of seemingly gibberish.
-      </p>
-      <p>
-        The power of Regex can be seen by example. Say you need to write a conditional searching for strings that match a group of image files range from 1 to 9. They are as so - "Image01", "Image02", "Image03", and so on. Writing this by hand would be pretty long:
-        <pre><code>
+  <nav class="clearfix debug">
+    <a href="../index.html"><img class="fl-l logo navHeader" src="../img/logo.png" alt="Logo"></a>
+    <button onclick="menuButton()" class="menu-icon">&#9776</button>
+    <ul class="fl-r clearfix menu">
+      <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
+      <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
+      <li class="fl-l"><a href="index.html">Link to Blog</a></li>
+      <li class="fl-l"><a href="../QA Resume '15.pdf">Resume</a></li>
+    </ul>
+  </nav>
+  <main class="blog_post">
+    <h2>Exploring Regular Expressions</h2>
+    <h4>August 6th, 2015</h4>
+    <img src="../img/t8.jpg" alt="Img of Post">
+    <p>
+      Regular Expressions, aka Regex, can be a very powerful tool in web development ranging from aiding validations to creating better search/select algorithms. Specifically, it can be used to narrow down a plethora of conditionals to a mere line or so of seemingly gibberish.
+    </p>
+    <p>
+      The power of Regex can be seen by example. Say you need to write a conditional searching for strings that match a group of image files range from 1 to 9. They are as so - "Image01", "Image02", "Image03", and so on. Writing this by hand would be pretty long:
+      <pre><code>
 string = "Image0" + (rand()*9+1).floor.to_s # randomizing string
 p string # always set to Image01 through Image09
 if (string == "Image01" || string == "Image02"... string == "Image09")
-  puts "Match!"
+puts "Match!"
 end
 
 # returns Match!
-        </code></pre>
-        That's quite lengthy. With Regex, it would instead be much shorter(note that when comparing strings with regex, the double equal sign is instead replaced with =~).
-        <pre><code>
+      </code></pre>
+      That's quite lengthy. With Regex, it would instead be much shorter(note that when comparing strings with regex, the double equal sign is instead replaced with =~).
+      <pre><code>
 string = "Image0" + (rand()*9+1).floor.to_s # randomizing string
 p string # always set to Image01 through Image09
 if (string =~ /Image0[1-9]/)
-  puts "Match!"
+puts "Match!"
 end
 
 # returns Match!
-        </code></pre>
-        This is much shorter! In short of what's happening, a forward slash begins and ends the regex comparison. Anything typed in between these forward slashes our searched for as written. As with everything, there are exceptions that show the power of regex. The brackets indicate a range to search for for that character. In this case, the range is between 1 and 9.
-      </p>
-      <p>
-        I compiled a reference table below that should help understand other sets of characters used with regex. To further your knowledge, I highly suggest the tutorial at <a href="http://www.regexone.com">RegexOne.com</a> that clarified the concept to me.
-      </p>
-      <table class="table">
-        <tr>
-          <th>Command</th>
-          <th>Meaning</th>
-        </tr>
-        <tr>
-          <td>abc…</td>
-          <td>Letters</td>
-        </tr>
-        <tr>
-          <td>123...</td>
-          <td>Digits</td>
-        </tr>
-        <tr>
-          <td>\d</td>
-          <td>Any Digit</td>
-        </tr>
-        <tr>
-          <td>\D</td>
-          <td>Any Non-digit character</td>
-        </tr>
-        <tr>
-          <td>.</td>
-          <td>Any Character</td>
-        </tr>
-        <tr>
-          <td>\.</td>
-          <td>Period</td>
-        </tr>
-        <tr>
-          <td>[abc]</td>
-          <td>Only a, b, or c</td>
-        </tr>
-        <tr>
-          <td>[^abc]</td>
-          <td>Not a, b, nor c</td>
-        </tr>
-        <tr>
-          <td>[a-z]</td>
-          <td>Characters a to z</td>
-        </tr>
-        <tr>
-          <td>[0-9]</td>
-          <td>Numbers 0 to 9</td>
-        </tr>
-        <tr>
-          <td>\w</td>
-          <td>Any Alphanumeric character</td>
-        </tr>
-        <tr>
-          <td>\W</td>
-          <td>Any Non-alphanumeric character</td>
-        </tr>
-        <tr>
-          <td>{m}</td>
-          <td>m Repetitions</td>
-        </tr>
-        <tr>
-          <td>{m,n}</td>
-          <td>m to n Repetitions</td>
-        </tr>
-        <tr>
-          <td>*</td>
-          <td>Zero or more repetitions</td>
-        </tr>
-        <tr>
-          <td>+</td>
-          <td>One or more repetitions</td>
-        </tr>
-        <tr>
-          <td>?</td>
-          <td>Optional character</td>
-        </tr>
-        <tr>
-          <td>\s</td>
-          <td>Any Whitespace</td>
-        </tr>
-        <tr>
-          <td>\S</td>
-          <td>Any Non-whitespace character</td>
-        </tr>
-        <tr>
-          <td>^...$</td>
-          <td>Starts and ends</td>
-        </tr>
-        <tr>
-          <td>(...)</td>
-          <td>Capture Group</td>
-        </tr>
-        <tr>
-          <td>(a(bc))</td>
-          <td>Capture Sub-group</td>
-        </tr>
-        <tr>
-          <td>(.*)</td>
-          <td>Capture all</td>
-        </tr>
-        <tr>
-          <td>(abc|def)</td>
-          <td>Matches abc or def</td>
-        </tr>
-      </table>
+      </code></pre>
+      This is much shorter! In short of what's happening, a forward slash begins and ends the regex comparison. Anything typed in between these forward slashes our searched for as written. As with everything, there are exceptions that show the power of regex. The brackets indicate a range to search for for that character. In this case, the range is between 1 and 9.
+    </p>
+    <p>
+      I compiled a reference table below that should help understand other sets of characters used with regex. To further your knowledge, I highly suggest the tutorial at <a href="http://www.regexone.com">RegexOne.com</a> that clarified the concept to me.
+    </p>
+    <table class="table">
+      <tr>
+        <th>Command</th>
+        <th>Meaning</th>
+      </tr>
+      <tr>
+        <td>abc…</td>
+        <td>Letters</td>
+      </tr>
+      <tr>
+        <td>123...</td>
+        <td>Digits</td>
+      </tr>
+      <tr>
+        <td>\d</td>
+        <td>Any Digit</td>
+      </tr>
+      <tr>
+        <td>\D</td>
+        <td>Any Non-digit character</td>
+      </tr>
+      <tr>
+        <td>.</td>
+        <td>Any Character</td>
+      </tr>
+      <tr>
+        <td>\.</td>
+        <td>Period</td>
+      </tr>
+      <tr>
+        <td>[abc]</td>
+        <td>Only a, b, or c</td>
+      </tr>
+      <tr>
+        <td>[^abc]</td>
+        <td>Not a, b, nor c</td>
+      </tr>
+      <tr>
+        <td>[a-z]</td>
+        <td>Characters a to z</td>
+      </tr>
+      <tr>
+        <td>[0-9]</td>
+        <td>Numbers 0 to 9</td>
+      </tr>
+      <tr>
+        <td>\w</td>
+        <td>Any Alphanumeric character</td>
+      </tr>
+      <tr>
+        <td>\W</td>
+        <td>Any Non-alphanumeric character</td>
+      </tr>
+      <tr>
+        <td>{m}</td>
+        <td>m Repetitions</td>
+      </tr>
+      <tr>
+        <td>{m,n}</td>
+        <td>m to n Repetitions</td>
+      </tr>
+      <tr>
+        <td>*</td>
+        <td>Zero or more repetitions</td>
+      </tr>
+      <tr>
+        <td>+</td>
+        <td>One or more repetitions</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>Optional character</td>
+      </tr>
+      <tr>
+        <td>\s</td>
+        <td>Any Whitespace</td>
+      </tr>
+      <tr>
+        <td>\S</td>
+        <td>Any Non-whitespace character</td>
+      </tr>
+      <tr>
+        <td>^...$</td>
+        <td>Starts and ends</td>
+      </tr>
+      <tr>
+        <td>(...)</td>
+        <td>Capture Group</td>
+      </tr>
+      <tr>
+        <td>(a(bc))</td>
+        <td>Capture Sub-group</td>
+      </tr>
+      <tr>
+        <td>(.*)</td>
+        <td>Capture all</td>
+      </tr>
+      <tr>
+        <td>(abc|def)</td>
+        <td>Matches abc or def</td>
+      </tr>
+    </table>
 
-    </main>
-    <footer class="debug">
-      <a href="https://www.facebook.com/mliew"><img src="../img/fb.png" alt="Facebook"></a>
-      <a href="https://twitter.com/mliew21396"><img src="../img/twitter.png" alt="Twitter"></a>
-      <a href="https://github.com/mliew21396"><img src="../img/github.png" alt="GitHub"></a>
-      <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="../img/linkedin.png" alt="LinkedIn"></a>
-    </footer>
-  </body>
+  </main>
+  <footer class="debug">
+    <a href="https://www.facebook.com/mliew"><img src="../img/fb.png" alt="Facebook"></a>
+    <a href="https://twitter.com/mliew21396"><img src="../img/twitter.png" alt="Twitter"></a>
+    <a href="https://github.com/mliew21396"><img src="../img/github.png" alt="GitHub"></a>
+    <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="../img/linkedin.png" alt="LinkedIn"></a>
+  </footer>
+</body>
