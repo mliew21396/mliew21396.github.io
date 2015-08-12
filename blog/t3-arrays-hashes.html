@@ -4,35 +4,37 @@
   <meta charset="UTF-8">
   <link type="text/css" rel="stylesheet" href="../css/default.css">
   <link type="text/css" rel="stylesheet" href="../css/blog_post.css">
+  <script type="text/javascript" src="../js/default.js"></script>
 </head>
 
 <body>
-    <nav class="clearfix debug">
-      <a href="../index.html"><img class="fl-l logo" src="../img/logo.png" alt="Logo"></a>
-      <ul class="fl-r clearfix">
-        <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
-        <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
-        <li class="fl-l"><a href="index.html">Link to Blog</a></li>
-        <li class="fl-l"><a href="../QA Resume '15.pdf">Resume</a></li>
-      </ul>
-    </nav>
-    <main class="blog_post">
-      <h2>Arrays vs Hashes - what are they and when to use each?</h2>
-      <h4>June 28, 2015</h4>
-      <img src="http://photo.foter.com/photos/229/research-data-management.jpg" alt="Img of Post">
-      <p>Arrays and hashes are both ways of structuring data. If you have a set of numbers or words that you want to group together, you'd use an array or hash. By creating this list of your data, you allow the items on the list to be related together through this list. And when you act on this list, you act on all the items at once. This is super convenient.</p>
-      <p>Both arrays and hashes are organized so that each list item consists of a pair of data - one representing the key and the other the value. The key can be seen as a pseudonmn of the value. If you call the key, you would get the associated value in return. Eg This makes life easy if your keys are numbers and their associated values are long strings of numbers.</p>
-      <p>So, what differentiates these two lists and how is the data structured? Arrays are ordered, integer-indexed lists. What this means is the keys are only whole numbers with the first key starting at 0. 0 being the first, 1 being the second, and so on. The keyword here is ordered.</p>
-      <pre><code>["banana", "apple", "mango"]</code></pre>
-      <p>In the array above, the integer keys are assumed and do not have to be explicitly written.</p>
-      <p>For hashes, they are similar to arrays except their keys can be arbitrary. They don't have to be integers and can be anything you want. Hashes do not have any ordering associated with the keys. Eg you can have a key of dog with an associated value of husky.</p>
-      <pre><code>{"key1:=>"value1", "key2"=>2, "key3"=>"value3"}</code></pre>
-      <p>In the hash above, the integer keys are specified.</p>
-    </main>
-    <footer class="debug">
-      <a href="https://www.facebook.com/mliew"><img src="../img/fb.png" alt="Facebook"></a>
-      <a href="https://twitter.com/mliew21396"><img src="../img/twitter.png" alt="Twitter"></a>
-      <a href="https://github.com/mliew21396"><img src="../img/github.png" alt="GitHub"></a>
-      <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="../img/linkedin.png" alt="LinkedIn"></a>
-    </footer>
-  </body>
+  <nav class="clearfix debug">
+    <a href="../index.html"><img class="fl-l logo navHeader" src="../img/logo.png" alt="Logo"></a>
+    <button onclick="menuButton()" class="menu-icon">&#9776</button>
+    <ul class="fl-r clearfix menu">
+      <li class="fl-l"><a href="../index.html#about_me">Link to About Me</a></li>
+      <li class="fl-l"><a href="https://github.com/mliew21396/">Link to Portfolio</a></li>
+      <li class="fl-l"><a href="index.html">Link to Blog</a></li>
+      <li class="fl-l"><a href="../QA Resume '15.pdf">Resume</a></li>
+    </ul>
+  </nav>
+  <main class="blog_post">
+    <h2>Arrays vs Hashes - what are they and when to use each?</h2>
+    <h4>June 28, 2015</h4>
+    <img src="http://photo.foter.com/photos/229/research-data-management.jpg" alt="Img of Post">
+    <p>Arrays and hashes are both ways of structuring data. If you have a set of numbers or words that you want to group together, you'd use an array or hash. By creating this list of your data, you allow the items on the list to be related together through this list. And when you act on this list, you act on all the items at once. This is super convenient.</p>
+    <p>Both arrays and hashes are organized so that each list item consists of a pair of data - one representing the key and the other the value. The key can be seen as a pseudonmn of the value. If you call the key, you would get the associated value in return. Eg This makes life easy if your keys are numbers and their associated values are long strings of numbers.</p>
+    <p>So, what differentiates these two lists and how is the data structured? Arrays are ordered, integer-indexed lists. What this means is the keys are only whole numbers with the first key starting at 0. 0 being the first, 1 being the second, and so on. The keyword here is ordered.</p>
+    <pre><code>["banana", "apple", "mango"]</code></pre>
+    <p>In the array above, the integer keys are assumed and do not have to be explicitly written.</p>
+    <p>For hashes, they are similar to arrays except their keys can be arbitrary. They don't have to be integers and can be anything you want. Hashes do not have any ordering associated with the keys. Eg you can have a key of dog with an associated value of husky.</p>
+    <pre><code>{"key1:=>"value1", "key2"=>2, "key3"=>"value3"}</code></pre>
+    <p>In the hash above, the integer keys are specified.</p>
+  </main>
+  <footer class="debug">
+    <a href="https://www.facebook.com/mliew"><img src="../img/fb.png" alt="Facebook"></a>
+    <a href="https://twitter.com/mliew21396"><img src="../img/twitter.png" alt="Twitter"></a>
+    <a href="https://github.com/mliew21396"><img src="../img/github.png" alt="GitHub"></a>
+    <a href="https://www.linkedin.com/pub/mathew-liew/16/758/34"><img src="../img/linkedin.png" alt="LinkedIn"></a>
+  </footer>
+</body>

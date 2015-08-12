@@ -10,9 +10,25 @@ main img {
   width: 8em;
   max-height: 100%;
   display: inline-block;
+  /*display: block;*/
 }
 main p {
   margin: 0.5em 0 0 1em;
   display: inline-block;
+  /*display: block;*/
   max-width: 80%;
+}
+@media screen and (max-width: 640px) {
+  h4 {
+    text-align: center;
+  }
+  main img {
+    float: none !important;
+    display: block !important;
+    margin: 0 auto;
+  }
+  p {
+    display: block !important;
+    margin: 0 auto !important;
+  }
 }
